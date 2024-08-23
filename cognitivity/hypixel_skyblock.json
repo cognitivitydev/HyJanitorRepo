@@ -1,0 +1,109 @@
+{
+  "author": "cognitivity",
+  "description": "Removes unnecessary messages from Hypixel SkyBlock, including fire sales, warp messages, kill combos, and ability messages.",
+  "created": 1724379730658,
+  "updated": 1724379730658,
+  "content": {
+    "version": 1,
+    "name": "Hypixel SkyBlock",
+    "type": "ALL",
+    "rules": [
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^Warping( you to your SkyBlock island)?\\.\\.\\.$",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^Sending to server .+...$",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "equals",
+          "string": "Welcome to Hypixel SkyBlock!",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "Latest update: SkyBlock v.+ CLICK",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^You are playing on profile: .+( \\(Co-op\\))?$",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^Profile ID: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^\\+\\d{1,2} Kill Combo",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "Your Kill Combo has expired! You reached a \\d{1,2} Kill Combo!",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^Your .+ hit \\d+ enem(y|ies) for (\\d{1,3},?)+ damage.$",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "((?m)(?s)^A FIRE SALE A(.+)? \\[WARP\\] To Elizabeth in the next .+ to grab yours!$)",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^You earned ((\\d{1,3},)?\\d{1,3} Event EXP|\\d{1,3} GEXP( \\+ (\\d{1,3},)?\\d{1,3} Event EXP)?) from playing SkyBlock!$",
+          "inverse": false
+        }
+      ]
+    ]
+  }
+}

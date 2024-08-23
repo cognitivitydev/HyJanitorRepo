@@ -1,0 +1,41 @@
+{
+  "author": "cognitivity",
+  "description": "Filters out spam messages from players asking for ranks in Hypixel Lobbies.",
+  "created": 1724379198355,
+  "updated": 1724379198355,
+  "content": {
+    "version": 1,
+    "name": "Rank Begging",
+    "type": "PLAYER",
+    "rules": [
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)(((pl(ease|[sz]+) )|((gift|give|get|gimm?e|send|slide)( me)?)( a)?)|(pl(ease|[sz]+))) \\[?(rank( | me )?(up(grade)?)?|vip(\\+?)|mvp(\\+{0,2})|(\\+\\+?))\\]?",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)((can i (have|get))|(i need|want))( a)? (rank( ?up(grade)?)?|vip(\\+?)|mvp(\\+{0,2})|(\\+\\+?))",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)(rank(( | me )?up(grade)?)?|vip(\\+?)|mvp(\\+{0,2})|(\\+\\+)) pl(ease|[sz]+)",
+          "inverse": false
+        }
+      ]
+    ]
+  }
+}

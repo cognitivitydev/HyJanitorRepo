@@ -1,0 +1,31 @@
+{
+  "author": "cognitivity",
+  "description": "Removes all empty messages from chat. Does not remove an empty line in a message with multiple lines.",
+  "created": 0,
+  "updated": 1724379470233,
+  "content": {
+    "version": 1,
+    "name": "Empty Message",
+    "type": "ALL",
+    "rules": [
+      [
+        {
+          "type": "MATCH",
+          "search": "equals",
+          "string": "",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "^ +$",
+          "inverse": false
+        }
+      ]
+    ]
+  }
+}

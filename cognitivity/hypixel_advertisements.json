@@ -1,0 +1,47 @@
+{
+  "author": "cognitivity",
+  "description": "Removes advertisements sent in Hypixel Lobbies, including SkyBlock auctions and lowballing, parties, and visit requests.",
+  "created": 1724379360242,
+  "updated": 1724379360242,
+  "content": {
+    "version": 1,
+    "name": "Hypixel Advertisements",
+    "type": "PLAYER",
+    "rules": [
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)((^|\\s)(visit|p(arty)?) me)|(/(visit|p(arty)? [A-Za-z0-9_]{3,16}))",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)lowball(in(g|')?)? \\d{1,3}([.,]\\d{1,3})? ?[mb]",
+          "inverse": false
+        }
+      ],
+      [
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)(on|check) my /?ah",
+          "inverse": false
+        },
+        {
+          "type": "COMPARATOR",
+          "operator": "or"
+        },
+        {
+          "type": "MATCH",
+          "search": "regex",
+          "string": "(?i)/?ah (me|[a-z0-9_]{3,16})",
+          "inverse": false
+        }
+      ]
+    ]
+  }
+}
