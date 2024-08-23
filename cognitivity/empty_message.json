@@ -1,7 +1,7 @@
 {
   "author": "cognitivity",
   "description": "Removes all empty messages from chat. Does not remove an empty line in a message with multiple lines.",
-  "created": 0,
+  "created": 1724379470233,
   "updated": 1724379470233,
   "content": {
     "version": 1,
